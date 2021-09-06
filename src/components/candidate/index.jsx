@@ -2,12 +2,11 @@ import React from 'react'
 
 import colors from '../../colors'
 import Debug from '../../assets/images/debug.png'
-
-const maxWidth = "220px"
+import './style.css'
 
 const Candidate = ({ frente, frenteId, lista, candidato, colorCodigo, votos }) => {
 	return(
-		<div style={Wrapper}>
+		<div className="CandidateResponsive" style={Wrapper}>
 			
 			<div style={WrapperHeader}>
 				<div style={WrapperFrente}>
@@ -15,11 +14,11 @@ const Candidate = ({ frente, frenteId, lista, candidato, colorCodigo, votos }) =
 				</div>
 				
 				<div style={WrapperImage}>
-					<img style={ImageStyle} src={Debug} />
+					<img style={ImageStyle} src={Debug} alt={`${candidato} ${frente}`} />
 				</div>
 			</div>
 			
-			<div style={WrapperBody}>
+			<div className="WrapperBody">
 				<div style={WrapperCandidato}>
 					<h4 style={{...LabelFrente}}>{candidato}</h4>
 				</div>			
@@ -45,7 +44,6 @@ const Candidate = ({ frente, frenteId, lista, candidato, colorCodigo, votos }) =
 export default Candidate
 
 const Wrapper = {
-	maxWidth: maxWidth,
 	margin: "0 15px",
 	justifyContent: "space-between",
 }
@@ -55,7 +53,7 @@ const WrapperHeader = {
 }
 
 const WrapperFrente = {
-	alignItems: "center",
+	alignItems: "flex-start",
 	justifyContent: "center",
 	height: "100px",
 	padding: "15px 0"
@@ -76,22 +74,14 @@ const ImageStyle = {
 	width: "100px",
 }
 
-const WrapperCandidato = {
-
-}
+const WrapperCandidato = {}
 
 const LabelLista = {
 	fontSize: "16px",
 	fontWeight: "bold",
-	// maxWidth: maxWidth,
-	// overflow: "hidden",
-	// textOverflow: "ellipsis",
-	// whiteSpace: "pre"
 }
 
-const WrapperLista = {
-
-}
+const WrapperLista = {}
 
 const WrapperOtras = {
 	marginTop: "20px",
@@ -114,8 +104,4 @@ const Percent = {
 	fontSize: "40px",
 	padding: "15px 0",
 	fontWeight: "bold"
-}
-
-const WrapperBody = {
-	height: "190px",
 }

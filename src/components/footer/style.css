@@ -1,0 +1,5 @@
+@media (min-width: 768px) {
+    .FooterResponsive {
+        flex-direction: row;
+    }
+}

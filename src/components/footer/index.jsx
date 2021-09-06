@@ -2,10 +2,11 @@ import React from 'react'
 
 import LogoAireImg from '../../assets/images/logo-aire.png'
 import colors from '../../colors'
+import './style.css'
 
 const Footer = ({ whites, nulled, date }) => {
 	return(
-		<div style={Wrapper}>
+		<div className="FooterResponsive" style={Wrapper}>
 			<div style={Info}>
 				<span style={InfoLabel}>Votos en blanco</span>
 				<span style={InfoNumber}>{whites}</span>
@@ -22,7 +23,7 @@ const Footer = ({ whites, nulled, date }) => {
 			</div>
 			
 			<div>
-				<img width="40px" height="40px" src={LogoAireImg} />
+				<img width="40px" height="40px" src={LogoAireImg} alt="Logo Aire de Santa Fe" />
 			</div>
 		</div>
 	)
@@ -33,7 +34,6 @@ export default Footer
 const Wrapper = {
 	backgroundColor: colors.grey,
 	padding: "15px 45px",
-	flexDirection: "row",
 	justifyContent: "space-between",
 	alignItems: "center"
 }

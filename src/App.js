@@ -36,7 +36,6 @@ const App = () => {
 
   return (
     <div className="App">
-      
       {loading &&
         <>
           <Header title="Elecciones 2021" />
@@ -47,7 +46,6 @@ const App = () => {
       {error &&
         <ErrorApp />
       }
-
 
       {showElection &&
         <Election candidates={candidates} info={info} />

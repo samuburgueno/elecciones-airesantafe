@@ -5,7 +5,7 @@ import Spinner from '../../assets/images/spinner.gif'
 const Loading = () => {
 	return(
 		<div style={Wrapper}>
-			<img width="50" height="50" src={Spinner} />
+			<img width="50" height="50" src={Spinner} alt="Cargando..." />
 		</div>
 	)
 }

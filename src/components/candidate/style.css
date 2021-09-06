@@ -1,0 +1,16 @@
+@media (max-width: 768px) {
+    .CandidateResponsive {
+        width: 100%;
+    }
+    .WrapperBody {
+        height: 120px;
+    }
+}
+@media (min-width: 786px) {
+    .CandidateResponsive {
+        width: 220px;
+    }
+    .WrapperBody {
+        height: 190px;
+    }
+}
