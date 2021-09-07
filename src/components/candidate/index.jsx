@@ -1,10 +1,20 @@
 import React, { useEffect, useState } from 'react'
 
 import colors from '../../colors'
-import Debug from '../../assets/images/debug.png'
 import './style.css'
 
-const Candidate = ({ frente, frenteId, lista, candidato, colorCodigo, votos, segundo, totalVotos, totalVotosValidos, porcentaje }) => {
+const Candidate = ({ 
+	frente, 
+	frenteId, 
+	lista, 
+	candidato, 
+	colorCodigo, 
+	votos, 
+	segundo, 
+	totalVotos, 
+	totalVotosValidos, 
+	porcentaje,
+	idCandidato }) => {
 	const [percent, setPercent] = useState(0)
 
 	useEffect(() => {
@@ -21,7 +31,7 @@ const Candidate = ({ frente, frenteId, lista, candidato, colorCodigo, votos, seg
 				</div>
 				
 				<div style={WrapperImage}>
-					<img style={ImageStyle} src={Debug} alt={`${candidato} ${frente}`} />
+					<img style={ImageStyle} src={`${process.env.PUBLIC_URL}/images/concejales/${idCandidato}.png`} alt={`${candidato} ${frente}`} />
 				</div>
 			</div>
 			
