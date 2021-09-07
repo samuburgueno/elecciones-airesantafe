@@ -76,11 +76,12 @@ const Wrapper = {}
 
 const WrapperSlide = {
 	flexDirection: "row",
+	position: "relative"
 }
 
 const WrapperCandidates = {
 	flexDirection: "row",
-	padding: "0 30px",
+	padding: "0 15px",
 	overflow: "auto",
 	flex: 1
 }
@@ -88,7 +89,9 @@ const WrapperCandidates = {
 const Button = {
 	backgroundColor: "transparent",
 	border: 0,
-	position: "absolute"
+	position: "absolute",
+	top: 0,
+	bottom: "-120px"
 }
 
 const WrapperButton = {

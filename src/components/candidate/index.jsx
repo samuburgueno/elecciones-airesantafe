@@ -43,12 +43,22 @@ const Candidate = ({ frente, frenteId, lista, candidato, colorCodigo, votos, seg
 					<>
 						<span style={LabelOtras}>{segundo.candidato}</span>
 						<span style={{...LabelOtras, marginTop: "5px"}}>{segundo.votos} votos</span>
+						
+						{segundo.porcentaje &&
+							<span style={{...LabelOtras, marginTop: "5px"}}>{segundo.porcentaje}%</span>
+						}
+
+						{!segundo.porcentaje &&
+							<span style={{...LabelOtras, marginTop: "5px"}}><br/></span>
+						}
 					</>
 				}
+				
 				{segundo === false &&
 					<>
-						<span style={LabelOtras}>No participa de<br/> internas.</span>
-						<span style={{...LabelOtras, marginTop: "5px"}}></span>
+						<span style={LabelOtras}><br/></span>
+						<span style={{...LabelOtras, marginTop: "5px"}}><br/></span>
+						<span style={{...LabelOtras, marginTop: "5px"}}><br/></span>
 					</>
 				}
 			</div>
@@ -117,7 +127,8 @@ const WrapperOtras = {
 
 const LabelOtras = {
 	fontSize: "16px",
-	color: colors.greyText
+	color: colors.greyText,
+	fontWeight: "bold",
 }
 
 const WrapperPercent = {
