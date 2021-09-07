@@ -109,7 +109,7 @@ const WrapperLista = {
 }
 
 const WrapperOtras = {
-	marginTop: "20px",
+	// marginTop: "20px",
 	padding: "20px 0",
 	// borderTop: "solid 1px" + colors.grey,
 	borderBottom: "solid 1px" + colors.grey	
