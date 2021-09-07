@@ -73,9 +73,10 @@ const Admin = ({ electionName }) => {
             
             {showElection &&
                 <Election 
-                refresh={refresh}
-                frentes={frentes}
-                info={info} />
+                    electionName={electionName}
+                    refresh={refresh}
+                    frentes={frentes}
+                    info={info} />
             }
         </div>
     );

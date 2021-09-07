@@ -9,7 +9,7 @@ import ArrowRight from '../../assets/images/arrow-right.png'
 
 import './style.css'
 
-const Election = ({ info, frentes, refresh }) => {
+const Election = ({ info, frentes, refresh, electionName }) => {
 	const [move, setMove] = useState(250)
 
 	const size = useWindowSize();
@@ -44,6 +44,7 @@ const Election = ({ info, frentes, refresh }) => {
 					<div ref={refSlider} style={WrapperCandidates}>
 						{frentes.map((frente) => (
 							<Candidate 
+								electionName={electionName}
 								key={frente.candidato.idFrente}
 								{...frente.candidato} 
 								segundo={frente.segundo} 

@@ -14,6 +14,7 @@ const Candidate = ({
 	totalVotos, 
 	totalVotosValidos, 
 	porcentaje,
+	electionName,
 	idCandidato }) => {
 	const [percent, setPercent] = useState(0)
 
@@ -31,7 +32,7 @@ const Candidate = ({
 				</div>
 				
 				<div style={WrapperImage}>
-					<img style={ImageStyle} src={`${process.env.PUBLIC_URL}/images/concejales/${idCandidato}.png`} alt={`${candidato} ${frente}`} />
+					<img style={ImageStyle} src={`${process.env.PUBLIC_URL}/images/${electionName}/${idCandidato}.png`} alt={`${candidato} ${frente}`} />
 				</div>
 			</div>
 			
