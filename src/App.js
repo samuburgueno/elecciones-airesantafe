@@ -15,8 +15,8 @@ const App = () => {
   const [frentes, setFrentes] = useState([])
 
   const { data, loading, error, refetch } = useGoogleSheets({
-    apiKey: "AIzaSyAIiGqOM-tppotenVJQ6Wq1G2ZA50r-A3U",
-    sheetId: "186yFCW3IJlCdubK8OZyQuZbnPA88eev2WKYdySoR6rw",
+    apiKey: process.env.REACT_APP_GOOGLE_API_KEY,
+    sheetId: process.env.REACT_APP_GOOGLE_SHEET_ID,
   });
 
   useEffect(() => {
