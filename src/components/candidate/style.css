@@ -1,6 +1,6 @@
 @media (max-width: 768px) {
     .CandidateResponsive {
-        width: 100%;
+        width: 200px;
     }
     .WrapperBody {
         height: 120px;
@@ -11,6 +11,6 @@
         width: 220px;
     }
     .WrapperBody {
-        height: 190px;
+        height: 192px;
     }
 }

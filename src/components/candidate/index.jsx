@@ -1,10 +1,17 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 import colors from '../../colors'
 import Debug from '../../assets/images/debug.png'
 import './style.css'
 
-const Candidate = ({ frente, frenteId, lista, candidato, colorCodigo, votos }) => {
+const Candidate = ({ frente, frenteId, lista, candidato, colorCodigo, votos, segundo, totalVotos, totalVotosValidos, porcentaje }) => {
+	const [percent, setPercent] = useState(0)
+
+	useEffect(() => {
+		let temp = (totalVotos/totalVotosValidos)*100
+		setPercent(temp.toFixed(2))
+	}, [frenteId, totalVotos, totalVotosValidos])
+
 	return(
 		<div className="CandidateResponsive" style={Wrapper}>
 			
@@ -18,24 +25,36 @@ const Candidate = ({ frente, frenteId, lista, candidato, colorCodigo, votos }) =
 				</div>
 			</div>
 			
-			<div className="WrapperBody">
+			<div className="WrapperBody" style={WrapperBody}>
 				<div style={WrapperCandidato}>
 					<h4 style={{...LabelFrente}}>{candidato}</h4>
 				</div>			
 				
 				<div style={WrapperLista}>
-					<span style={LabelLista}>{lista}</span>
 					<span style={{...LabelLista, marginTop: "5px"}}>{votos} votos</span>
+					{porcentaje &&
+						<span style={{...LabelLista, marginTop: "5px"}}>{porcentaje}%</span>
+					}
 				</div>
 			</div>
 
 			<div style={WrapperOtras}>
-				<span style={LabelOtras}>Otras listas</span>
-				<span style={{...LabelOtras, marginTop: "5px"}}>100 votos</span>
+				{segundo !== false &&
+					<>
+						<span style={LabelOtras}>{segundo.candidato}</span>
+						<span style={{...LabelOtras, marginTop: "5px"}}>{segundo.votos} votos</span>
+					</>
+				}
+				{segundo === false &&
+					<>
+						<span style={LabelOtras}>No participa de<br/> internas.</span>
+						<span style={{...LabelOtras, marginTop: "5px"}}></span>
+					</>
+				}
 			</div>
 
 			<div style={WrapperPercent}>
-				<span style={{...Percent, color: colorCodigo}}>00,00%</span>
+				<span style={{...Percent, color: colorCodigo}}>{percent}%</span>
 			</div>
 		</div>
 	)
@@ -45,7 +64,7 @@ export default Candidate
 
 const Wrapper = {
 	margin: "0 15px",
-	justifyContent: "space-between",
+	// justifyContent: "space-between",
 }
 
 const WrapperHeader = {
@@ -62,6 +81,10 @@ const WrapperFrente = {
 const LabelFrente = {
 	fontSize: "24px",
 	margin: "20px 0",
+}
+
+const WrapperBody = {
+	borderBottom: "solid 1px" + colors.grey,
 }
 
 const WrapperImage = {
@@ -81,12 +104,14 @@ const LabelLista = {
 	fontWeight: "bold",
 }
 
-const WrapperLista = {}
+const WrapperLista = {
+	paddingBottom: "15px"
+}
 
 const WrapperOtras = {
 	marginTop: "20px",
 	padding: "20px 0",
-	borderTop: "solid 1px" + colors.grey,
+	// borderTop: "solid 1px" + colors.grey,
 	borderBottom: "solid 1px" + colors.grey	
 }
 

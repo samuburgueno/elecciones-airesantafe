@@ -9,7 +9,7 @@ import ArrowRight from '../../assets/images/arrow-right.png'
 
 import './style.css'
 
-const Election = ({ candidates, info }) => {
+const Election = ({ info, frentes, refresh }) => {
 	const [move, setMove] = useState(250)
 
 	const size = useWindowSize();
@@ -24,7 +24,7 @@ const Election = ({ candidates, info }) => {
 	}
 
 	useEffect(() => {
-		setMove(size.width > 768 ? 250 : 470)
+		setMove(size.width > 768 ? 250 : 460)
 	}, [size.width])
 
 	return(
@@ -40,13 +40,18 @@ const Election = ({ candidates, info }) => {
 					</button>
 				</div>
 				
-				<div ref={refSlider} style={WrapperCandidates}>
-					
-					{candidates.map((candidate, index) => 
-						<Candidate key={index} {...candidate} />
-						)}
-
-				</div>
+				{frentes.length > 0 &&
+					<div ref={refSlider} style={WrapperCandidates}>
+						{frentes.map((frente) => (
+							<Candidate 
+								key={frente.candidato.idFrente}
+								{...frente.candidato} 
+								segundo={frente.segundo} 
+								totalVotos={frente.totalVotos} 
+								totalVotosValidos={info.votosValidos} />
+						))}
+					</div>
+				}
 				
 				<div style={WrapperButton}>
 					<button className="Button" style={{...Button, right: 0}} onClick={handlerRight}>
@@ -56,9 +61,11 @@ const Election = ({ candidates, info }) => {
 			</div>
 
 			<Footer
+				refresh={refresh}
 				whites={info.blancos}
 				nulled={info.nulos}
-				date="" />
+				updated={info.horaActualizacion}
+				date="12:30AM" />
 		</div>
 	)
 }

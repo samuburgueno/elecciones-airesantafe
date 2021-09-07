@@ -7,10 +7,12 @@ import Loading from './components/loading'
 
 import Election from './components/election'
 
+import { prepareDataExcel } from './utils';
+
 const App = () => {
-  const [candidates, setCandidates] = useState([])
   const [info, setInfo] = useState({})
   const [showElection, setShowElection] = useState(false)
+  const [frentes, setFrentes] = useState([])
 
   const { data, loading, error, refetch } = useGoogleSheets({
     apiKey: "AIzaSyAIiGqOM-tppotenVJQ6Wq1G2ZA50r-A3U",
@@ -21,18 +23,25 @@ const App = () => {
     if(data.length > 0) {
       const conce = data.find(a => a.id === 'concejales')
       const conceData = data.find(a => a.id === 'concejales-data')
-
-      setCandidates(conce.data)
+      
+      let frentesTemp = prepareDataExcel(conce.data)
+      
+      setFrentes(frentesTemp)
       setInfo(conceData.data[0])
     }
   }, [data])
 
   useEffect(() => {
-    if(!loading && candidates.length !== 0 && info?.titulo) {
+    if(!loading && frentes.length !== 0 && info?.titulo) {
       setShowElection(true)
     }
 
-  }, [loading, candidates, info])
+  }, [loading, info, frentes])
+
+  const refresh = () => {
+    setShowElection(!showElection)
+    refetch()
+  }
 
   return (
     <div className="App">
@@ -48,7 +57,10 @@ const App = () => {
       }
 
       {showElection &&
-        <Election candidates={candidates} info={info} />
+        <Election 
+          refresh={refresh}
+          frentes={frentes}
+          info={info} />
       }
     </div>
   );

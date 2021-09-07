@@ -4,7 +4,7 @@ import LogoAireImg from '../../assets/images/logo-aire.png'
 import colors from '../../colors'
 import './style.css'
 
-const Footer = ({ whites, nulled, date }) => {
+const Footer = ({ whites, nulled, updated, refresh }) => {
 	return(
 		<div className="FooterResponsive" style={Wrapper}>
 			<div style={Info}>
@@ -19,11 +19,11 @@ const Footer = ({ whites, nulled, date }) => {
 			
 			<div style={Info}>
 				<span style={InfoLabel}>Actualización</span>
-				<span style={InfoNumber}>{date}</span>
+				<span style={InfoNumber}>{updated}</span>
 			</div>
 			
 			<div>
-				<img width="40px" height="40px" src={LogoAireImg} alt="Logo Aire de Santa Fe" />
+				<img onClick={refresh} width="40px" height="40px" src={LogoAireImg} alt="Logo Aire de Santa Fe" />
 			</div>
 		</div>
 	)
