@@ -19,7 +19,7 @@ const Candidate = ({
 
 	useEffect(() => {
 		let temp = (totalVotos/totalVotosValidos)*100
-		setPercent(temp.toFixed(2))
+		setPercent(temp.toFixed(2).replace('.', ','))
 	}, [frenteId, totalVotos, totalVotosValidos])
 
 	return(
@@ -41,7 +41,7 @@ const Candidate = ({
 				</div>			
 				
 				<div style={WrapperLista}>
-					<span style={{...LabelLista, marginTop: "5px"}}>{votos} votos</span>
+					<span style={{...LabelLista, marginTop: "5px"}}>{parseInt(votos).toLocaleString("es-ar")} votos</span>
 					{porcentaje &&
 						<span style={{...LabelLista, marginTop: "5px"}}>{porcentaje}%</span>
 					}
@@ -52,7 +52,7 @@ const Candidate = ({
 				{segundo !== false &&
 					<>
 						<span style={LabelOtras}>{segundo.candidato}</span>
-						<span style={{...LabelOtras, marginTop: "5px"}}>{segundo.votos} votos</span>
+						<span style={{...LabelOtras, marginTop: "5px"}}>{parseInt(segundo.votos).toLocaleString("es-ar")} votos</span>
 						
 						{segundo.porcentaje &&
 							<span style={{...LabelOtras, marginTop: "5px"}}>{segundo.porcentaje}%</span>
