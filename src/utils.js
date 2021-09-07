@@ -37,7 +37,5 @@ export const prepareDataExcel = (data) => {
     })
     frentesFinal.sort((a, b) => a.totalVotos > b.totalVotos ? -1 : 1)
 
-    console.log(frentesFinal)
-
     return frentesFinal
 }
