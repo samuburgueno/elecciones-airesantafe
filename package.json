@@ -1,6 +1,5 @@
 {
   "name": "elecciones",
-  "homepage": "https://samuburgueno.github.io/elecciones-airesantafe/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
