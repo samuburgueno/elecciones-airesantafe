@@ -37,6 +37,8 @@ const Admin = ({ electionName }) => {
                     conce = data.find(a => a.id === 'senadores')
                     conceData = data.find(a => a.id === 'senadores-data')
                     break;
+
+                default: break;
             }
             
             let frentesTemp = prepareDataExcel(conce.data)

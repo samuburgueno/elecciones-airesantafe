@@ -6,6 +6,7 @@ import {
 } from "react-router-dom";
 
 import Admin from './components/admin';
+import { Vacunacion } from './containers'
 
 const App = () => {
 	return (
@@ -19,6 +20,9 @@ const App = () => {
 				</Route>
 				<Route path="/senadores">
 					<Admin electionName="senadores" />
+				</Route>
+				<Route path="/vacunacion">
+					<Vacunacion />
 				</Route>
 			</Switch>
 		</Router>
