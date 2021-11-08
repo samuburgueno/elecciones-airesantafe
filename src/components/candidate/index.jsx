@@ -39,17 +39,10 @@ const Candidate = ({
 			<div className="WrapperBody" style={WrapperBody}>
 				<div style={WrapperCandidato}>
 					<h4 style={{...LabelFrente}}>{candidato}</h4>
-				</div>			
-				
-				<div style={WrapperLista}>
-					<span style={{...LabelLista, marginTop: "5px"}}>{parseInt(votos).toLocaleString("es-ar")} votos</span>
-					{porcentaje &&
-						<span style={{...LabelLista, marginTop: "5px"}}>{porcentaje}%</span>
-					}
 				</div>
 			</div>
 
-			<div style={WrapperOtras}>
+			{/*<div style={WrapperOtras}>
 				{segundo !== false &&
 					<>
 						<span style={LabelOtras}>{segundo.candidato}</span>
@@ -72,9 +65,16 @@ const Candidate = ({
 						<span style={{...LabelOtras, marginTop: "5px"}}><br/></span>
 					</>
 				}
-			</div>
+			</div>*/}
 
 			<div style={WrapperPercent}>
+				<div style={WrapperLista}>
+					<span style={{...LabelLista, marginTop: "5px", paddingBottom: "15px"}}>{parseInt(votos).toLocaleString("es-ar")} votos</span>
+					{/*{porcentaje &&
+						<span style={{...LabelLista, marginTop: "5px"}}>{porcentaje}%</span>
+					}*/}
+				</div>
+
 				<span style={{...Percent, color: colorCodigo}}>{percent}%</span>
 			</div>
 		</div>
@@ -105,7 +105,7 @@ const LabelFrente = {
 }
 
 const WrapperBody = {
-	borderBottom: "solid 1px" + colors.grey,
+	// borderBottom: "solid 1px" + colors.grey,
 }
 
 const WrapperImage = {
@@ -123,10 +123,11 @@ const WrapperCandidato = {}
 const LabelLista = {
 	fontSize: "16px",
 	fontWeight: "bold",
+	borderBottom: "solid 1px" + colors.grey,
 }
 
 const WrapperLista = {
-	paddingBottom: "15px"
+	// paddingBottom: "15px"
 }
 
 const WrapperOtras = {
@@ -149,6 +150,6 @@ const WrapperPercent = {
 
 const Percent = {
 	fontSize: "40px",
-	padding: "15px 0",
+	// padding: "15px 0",
 	fontWeight: "bold"
 }

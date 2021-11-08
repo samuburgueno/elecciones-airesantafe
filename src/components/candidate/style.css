@@ -3,7 +3,7 @@
         width: 200px;
     }
     .WrapperBody {
-        height: 167px;
+        height: 115px;
     }
 }
 @media (min-width: 786px) {
@@ -11,6 +11,6 @@
         width: 220px;
     }
     .WrapperBody {
-        height: 192px;
+        height: 115px;
     }
 }

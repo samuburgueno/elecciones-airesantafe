@@ -43,7 +43,7 @@ const Vacunacion = () => {
 			</div>
 
 			<div style={Content}>
-				<div style={{flex: 1, flexDirection: "column", borderRight: "solid 1px #e6e6e6", paddingRight: "15px"}}>
+				<div style={{flex: 1, flexDirection: "column", borderRight: "solid 1px #e6e6e6", paddingRight: "10px"}}>
 					<div style={{...Item, borderBottom: "solid 1px #e6e6e6", paddingBottom: "15px"}}>
 						<div style={{...RowCenter, justifyContent: "flex-start"}}>
 							<img src={DosisPais} width={9} height={21} alt="Vacunación en Argentina" />
@@ -61,7 +61,7 @@ const Vacunacion = () => {
 					</div>
 				</div>
 
-				<div style={{flex: 1, flexDirection: "column", borderLeft: "solid 1px white", paddingLeft: "15px"}}>
+				<div style={{flex: 1, flexDirection: "column", borderLeft: "solid 1px white", paddingLeft: "10px"}}>
 					<div style={{...Item, borderBottom: "solid 1px #e6e6e6", paddingBottom: "15px"}}>
 						<div style={{...RowCenter, justifyContent: "flex-start"}}>
 							<img src={VacunasAplicadas} width={31} height={12} alt="Vacunación en Argentina" />
@@ -92,8 +92,8 @@ const Vacunacion = () => {
 export default Vacunacion
 
 const WrapperVacunacion = {
-	width: "400px",
-	height: "300px",
+	// width: "350px",
+	// height: "300px",
 }
 
 const Header = {
@@ -111,7 +111,7 @@ const HeaderTitle = {
 	color: colors.white,
 	margin: 0,
 	textTransform: "uppercase",
-	fontSize: "16px"
+	fontSize: "13px"
 }
 
 const Content = {
@@ -125,8 +125,8 @@ const Item = {
 }
 
 const ItemTitle = {
-	fontSize: "12px",
-	marginLeft: "5px"
+	fontSize: "11.3px",
+	marginLeft: "2px"
 }
 
 const Footer = {
@@ -140,7 +140,7 @@ const RowCenter = {
 }
 
 const Numero = {
-	fontSize: "26px",
+	fontSize: "24px",
 	color: colors.base,
 	fontWeight: "bold",
 	textAlign: "center"
