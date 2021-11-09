@@ -1,7 +1,7 @@
 import React from 'react'
 
 import colors from '../../colors'
-import LogoPasoImg from '../../assets/images/logo-paso-2021.png'
+// import LogoPasoImg from '../../assets/images/logo-paso-2021.png'
 import LogoDefinitivasImg from '../../assets/images/logo-definitivas-2021.png'
 import './style.css'
 

@@ -130,18 +130,18 @@ const WrapperLista = {
 	// paddingBottom: "15px"
 }
 
-const WrapperOtras = {
-	// marginTop: "20px",
-	padding: "20px 0",
-	// borderTop: "solid 1px" + colors.grey,
-	borderBottom: "solid 1px" + colors.grey	
-}
+// const WrapperOtras = {
+// 	// marginTop: "20px",
+// 	padding: "20px 0",
+// 	// borderTop: "solid 1px" + colors.grey,
+// 	borderBottom: "solid 1px" + colors.grey	
+// }
 
-const LabelOtras = {
-	fontSize: "16px",
-	color: colors.greyText,
-	fontWeight: "bold",
-}
+// const LabelOtras = {
+// 	fontSize: "16px",
+// 	color: colors.greyText,
+// 	fontWeight: "bold",
+// }
 
 const WrapperPercent = {
 	borderBottom: "solid 1px" + colors.grey,
@@ -151,5 +151,7 @@ const WrapperPercent = {
 const Percent = {
 	fontSize: "40px",
 	// padding: "15px 0",
-	fontWeight: "bold"
+	fontWeight: "bold",
+	paddingTop: "10px",
+	paddingBottom: "10px",
 }
